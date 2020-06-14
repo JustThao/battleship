@@ -1,5 +1,6 @@
 def printBoard(boardArr):
     # print the board
+    # todo nhat
     pass
 
 def board():
