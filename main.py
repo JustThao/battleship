@@ -22,6 +22,7 @@ else:
 def printBoard(boardArr):
     # print the board
     # todo nhat
+    # hallo
     pass
 
 def board():
