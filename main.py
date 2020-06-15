@@ -1,10 +1,7 @@
 # constants todo tuan
 
-def printBoard(boardArr):
-    # print the board
-    # todo nhat
-    # hallo
-    pass
+def printBoard():
+    print('hi')
 
 def board():
     # returns the current state of the board
@@ -17,3 +14,4 @@ def guess():
 def game():
     pass
 
+printBoard()
