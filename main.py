@@ -19,10 +19,11 @@ elif (direction == 2 and yLength >= yPos):
 else:
     print('couldnt be placed because not enough space')
 
+# TODO make this function generic by using a board parameter instead of row
+# TODO use xLength and yLength constants instead of static numbers (10)
 def printBoard():
-     row = {}
+    row = {}
     for i in range(0, 10):
-    
         if i > 0:
             print(i, end = " ") #column outline
             for j in range(1, 10):
@@ -35,21 +36,22 @@ def printBoard():
 
         print()
 
+# TODO generate the row dictionary which can be used as argument for printBoard()
 def board():
-    # returns the current state of the board
     pass
 
-# gets x y coordinates from user input and prints the board after
+# TODO gets x y coordinates from user input 
 def guess():
     # newBoard = board
-    # xPos input
     # yPos input
-    # newBoard[y][x] = 1
+    # xPos input
+    # newBoard[y,x] = 1
     # print the board
     pass
     
     
 def game():
-    pass
+    printBoard()
+    guess()
 
-printBoard()
+game()
