@@ -28,12 +28,10 @@ def printBoard():
             print(i, end = " ") #column outline
             for j in range(1, 10):
                 row[i,j] = 0
-                print(row[(i,j)], end = " ")
-     
+                print(row[(i,j)], end = " ")    
         else:
             for j in range(0, 10):
                 print(j, end = " ") #row outline
-
         print()
 
 # TODO generate the row dictionary which can be used as argument for printBoard()
