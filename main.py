@@ -35,12 +35,12 @@ def printBoard():
         print()
 
 # TODO generate the row dictionary which can be used as argument for printBoard()
-def board():
+def boardArr():
     pass
 
 # TODO gets x y coordinates from user input 
 def guess():
-    # newBoard = board
+    # newBoard = boardArr()
     # yPos input
     # xPos input
     # newBoard[y,x] = 1
