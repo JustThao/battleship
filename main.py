@@ -20,7 +20,20 @@ else:
     print('couldnt be placed because not enough space')
 
 def printBoard():
-    print('hi')
+     row = {}
+    for i in range(0, 10):
+    
+        if i > 0:
+            print(i, end = " ") #column outline
+            for j in range(1, 10):
+                row[i,j] = 0
+                print(row[(i,j)], end = " ")
+     
+        else:
+            for j in range(0, 10):
+                print(j, end = " ") #row outline
+
+        print()
 
 def board():
     # returns the current state of the board
