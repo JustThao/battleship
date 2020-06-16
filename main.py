@@ -21,22 +21,27 @@ else:
 
 # TODO make this function generic by using a board parameter instead of row
 # TODO use xLength and yLength constants instead of static numbers (10)
-def printBoard():
-    row = {}
-    for i in range(0, 10):
+def printBoard(board):
+    for i in range(0, yLength + 1):
         if i > 0:
             print(i, end = " ") #column outline
-            for j in range(1, 10):
-                row[i,j] = 0
-                print(row[(i,j)], end = " ")    
+            for j in range(1, xLength + 1):
+                
+                print(board[(i, j)], end = " ")
+     
         else:
-            for j in range(0, 10):
+            for j in range(0, xLength + 1):
                 print(j, end = " ") #row outline
+
         print()
 
 # TODO generate the row dictionary which can be used as argument for printBoard()
 def boardArr():
-    pass
+    row = {}
+    for i in range(0, yLength + 1):
+        for j in range(1, xLength + 1):
+            row[i,j] = 0                
+    return row
 
 # TODO gets x y coordinates from user input 
 def guess():
