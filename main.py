@@ -4,8 +4,8 @@ from random import randint
 # use xLength and yLength for number of columns/rows
 # xLength = int(input('how many columns?: '))
 # yLength = int(input('how many rows?: '))
-xLength = 10
-yLength = 10
+xLength = 9
+yLength = 9
 shipSize = randint(1,4)
 direction = randint(1,2)
 xPos = 0
@@ -19,29 +19,27 @@ elif (direction == 2 and yLength >= yPos):
 else:
     print('couldnt be placed because not enough space')
 
-# TODO make this function generic by using a board parameter instead of row
-# TODO use xLength and yLength constants instead of static numbers (10)
 def printBoard(board):
-    for i in range(0, yLength + 1):
+    for i in range(yLength + 1):
         if i > 0:
             print(i, end = " ") #column outline
             for j in range(1, xLength + 1):
-                
                 print(board[(i, j)], end = " ")
-     
         else:
-            for j in range(0, xLength + 1):
+            for j in range(xLength + 1):
                 print(j, end = " ") #row outline
 
         print()
 
-# TODO generate the row dictionary which can be used as argument for printBoard()
 def boardArr():
     row = {}
-    for i in range(0, yLength + 1):
+    for i in range(yLength + 1):
         for j in range(1, xLength + 1):
             row[i,j] = 0                
     return row
+
+def createShips():
+    pass
 
 # TODO gets x y coordinates from user input 
 def guess():
@@ -54,7 +52,8 @@ def guess():
     
     
 def game():
-    printBoard()
+    printBoard(boardArr())
     guess()
 
-game()
+
+printBoard(boardArr())
