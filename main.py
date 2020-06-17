@@ -33,7 +33,7 @@ def printBoard(board):
 
 def boardArr():
     row = {}
-    for i in range(yLength + 1):
+    for i in range(1, yLength + 1):
         for j in range(1, xLength + 1):
             row[i,j] = 0                
     return row
@@ -48,7 +48,30 @@ def guess():
     # xPos input
     # newBoard[y,x] = 1
     # print the board
-    pass
+    
+    while True:
+        
+        try:
+    
+            newBoard = boardArr()
+    
+            yy = int(input("y-coordinate: "))
+            xx= int(input("x-coordinate: "))
+    
+            pair = str(input("(" + str(yy) + "," + str(xx) + ") right? Y/N\n"))
+                
+            if pair == "Y" or pair == "y":
+                break
+            
+        except valueError:
+                       print()
+                
+    #if newBoard[(yy, xx)] == ship: #need value for ship
+        #newBoard[(yy, xx)] = 1
+    #else:
+        #newBoard[(yy, xx)] = "x"
+    
+    #print(newBoard)
     
     
 def game():
