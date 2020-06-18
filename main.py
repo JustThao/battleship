@@ -1,23 +1,15 @@
 from random import randint
 
-# constants
-# use xLength and yLength for number of columns/rows
-# xLength = int(input('how many columns?: '))
-# yLength = int(input('how many rows?: '))
 xLength = 9
 yLength = 9
-shipSize = randint(1,4)
-direction = randint(1,2)
-xPos = 0
-yPos = 0
 
 # 1 == horizontal, 2 == vertical
-if (direction == 1 and xLength >= shipSize):
-    xPos = randint(1, xLength - shipSize + 1)
-elif (direction == 2 and yLength >= yPos):
-    yPos = randint(1, yLength - shipSize + 1)
-else:
-    print('couldnt be placed because not enough space')
+# if (direction == 1 and xLength >= shipSize):
+#     xPos = randint(1, xLength - shipSize + 1)
+# elif (direction == 2 and yLength >= yPos):
+#     yPos = randint(1, yLength - shipSize + 1)
+# else:
+#     print('couldnt be placed because not enough space')
 
 def printBoard(board):
     for i in range(yLength + 1):
@@ -39,31 +31,27 @@ def boardArr():
     return row
 
 def createShips():
-    pass
+    ships = []
+    buffer = {}
+    shipCount = 3
+    for i in range(shipCount):
+        shipSize = randint(1,4)
+        startPosition = randint(1, xLength)
+        for j in range(shipSize):
+            buffer[startPosition, j] = 0
+        ships.append(buffer)
+    return ships
 
-# TODO gets x y coordinates from user input 
 def guess():
-    # newBoard = boardArr()
-    # yPos input
-    # xPos input
-    # newBoard[y,x] = 1
-    # print the board
-    
     while True:
-        
         try:
-    
             newBoard = boardArr()
-    
             yy = int(input("y-coordinate: "))
             xx= int(input("x-coordinate: "))
-    
             pair = str(input("(" + str(yy) + "," + str(xx) + ") right? Y/N\n"))
-                
             if pair == "Y" or pair == "y":
                 break
-            
-        except valueError:
+        except ValueError:
                        print()
                 
     #if newBoard[(yy, xx)] == ship: #need value for ship
@@ -78,5 +66,4 @@ def game():
     printBoard(boardArr())
     guess()
 
-
-printBoard(boardArr())
+print(createShips())
