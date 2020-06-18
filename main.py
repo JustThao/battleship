@@ -30,6 +30,7 @@ def boardArr():
             row[i,j] = 0                
     return row
 
+# TODO fix bug, ships has wrong output
 def createShips():
     ships = []
     buffer = {}
