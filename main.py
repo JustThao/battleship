@@ -43,7 +43,7 @@ def createShips():
         #ships.append(buffer)
     #return ships
 
-    def createShips():
+def createShips():
     
     buffer = {}
     shipCount = 3
@@ -71,7 +71,35 @@ def createShips():
             for j in range(shipSize):
                 buffer[j + 1, startPosition] = 0
     
-    return buffer
+    return buffer def createShips():
+    
+    buffer = {}
+    shipCount = 3
+    #1 == horizontal, 2 == vertical
+    
+    for i in range(shipCount):        
+        while True:
+            try:
+            
+                direction = int(input("For placing ship horizontal enter '1' and vertical enter '2'. " + "Ship " + str(i+1) + ": "))
+                shipSize = randint(1,4) #maybe shipsize = randint(1, int(xLength/2) or randint(1, int(yLength/2)))
+                if direction == 1 or direction == 2:
+                    break
+                else:
+                    print("Please enter either 1 or 2")
+            except ValueError:
+                print("Please enter either 1 or 2")
+                
+        if (direction == 1 and xLength >= shipSize):
+            startPosition = randint(1, xLength - shipSize + 1)
+            for j in range(shipSize):
+                buffer[startPosition, j + 1] = 0
+        elif (direction == 2 and yLength >= shipSize):     
+            startPosition = randint(1, yLength - shipSize + 1)
+            for j in range(shipSize):
+                buffer[j + 1, startPosition] = 0
+    
+    return buffer   
 
 def guess():
     while True:
