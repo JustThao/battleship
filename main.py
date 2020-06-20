@@ -31,7 +31,7 @@ def boardArr():
     return row
 
 # TODO fix bug, ships has wrong output 
-# def createShips():
+#def createShips():
     #ships = []
     #buffer = {}
     #shipCount = 3
@@ -44,6 +44,7 @@ def boardArr():
     #return ships
 
 # TODO fix double value
+
 def createShips():
     
     buffer = {}
