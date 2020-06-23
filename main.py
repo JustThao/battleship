@@ -75,7 +75,7 @@ def createShips():
     
     return buffer
 
-ddef guess():
+def guess():
     newBoard = boardArr()
     ships = createShips()
     #print(ships) for testing purpose
