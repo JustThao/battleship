@@ -82,15 +82,18 @@ def guess():
         try:
             # TODO compare KEYS! (yy,xx) with ships
             yy = int(input("y-coordinate: "))
-            xx= int(input("x-coordinate: "))
-        except ValueError:
+            xx = int(input("x-coordinate: "))
             break
+            
+        except ValueError:
+            print()
+
         
-    #if newBoard[(yy, xx)] == ship: #need value for ship
-        #newBoard[(yy, xx)] = 1
-    #else:
-        #newBoard[(yy, xx)] = "x"
-    #print(newBoard)
+    if newBoard[(yy, xx)] in ships:
+        newBoard[(yy, xx)] = 1
+    else:
+        newBoard[(yy, xx)] = "x"
+    print(newBoard)
     
     
 def game():
