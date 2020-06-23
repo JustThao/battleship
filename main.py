@@ -94,7 +94,8 @@ def guess():
         newBoard[(yy, xx)] = 1
     else:
         newBoard[(yy, xx)] = "x"
-    print(newBoard)
+    #print(newBoard)
+    return newBoard
     
     
 def game():
