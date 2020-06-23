@@ -75,9 +75,10 @@ def createShips():
     
     return buffer
 
-def guess():
+ddef guess():
     newBoard = boardArr()
     ships = createShips()
+    #print(ships) for testing purpose
     while True:
         try:
             # TODO compare KEYS! (yy,xx) with ships
@@ -89,7 +90,7 @@ def guess():
             print()
 
         
-    if newBoard[(yy, xx)] in ships:
+    if (yy, xx) in ships:
         newBoard[(yy, xx)] = 1
     else:
         newBoard[(yy, xx)] = "x"
