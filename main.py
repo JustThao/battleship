@@ -51,29 +51,65 @@ def createShips():
     shipCount = 3
     #1 == horizontal, 2 == vertical
     
-    for i in range(shipCount):        
-        # while True:
-            # try:
-            #     direction = int(input("For placing ship horizontal enter '1' and vertical enter '2'. " + "Ship " + str(i+1) + ": "))
-            #     shipSize = randint(1,4) #maybe shipsize = randint(1, int(xLength/2) or randint(1, int(yLength/2)))
-            #     if direction == 1 or direction == 2:
-            #         break
-            #     else:
-            #         print("Please enter either 1 or 2")
-            # except ValueError:
-            #     print("Please enter either 1 or 2")
+    for i in range(shipCount):
+        
+        #while True:
+            
+         #   try:
+          #      direction = int(input("For placing ship horizontal enter '1' and vertical enter '2'. " + "Ship " + str(i+1) + ": "))
+           #     shipSize = randint(1,4) #maybe shipsize = randint(1, int(xLength/2) or randint(1, int(yLength/2)))
+            #    if direction == 1 or direction == 2:
+             #       break
+              #  else:
+               #     print("Please enter either 1 or 2")
+            #except ValueError:
+             #   print("Please enter either 1 or 2")
+                
         shipSize = 3
         direction = 1
-        if (direction == 1 and xLength >= shipSize):
-            startPosition = randint(1, xLength - shipSize + 1)
-            for j in range(shipSize):
-                buffer[startPosition, j + 1] = 0
-        elif (direction == 2 and yLength >= shipSize):     
-            startPosition = randint(1, yLength - shipSize + 1)
-            for j in range(shipSize):
-                buffer[j + 1, startPosition] = 0
+        
+        if (direction == 1 and xLength >= shipSize): #placing ship horizontal
+            start_position_y = randint(1, xLength - shipSize + 1)
+            start_position_x = randint(1, xLength - shipSize + 1)
+            
+            while start_position_x + shipSize > xLength:
+                start_position_x = randint(1, xLength - shipSize + 1) #avoiding outside the box
+            j = 0
+            buff = {}
+            
+            while j < shipSize:
+                if not (start_position_y, start_position_x + j + 1) in buffer:
+                    buff[start_position_y, start_position_x + j + 1] = 0
+                    j += 1
+                else:
+                    buff = {}
+                    j = 0
+                    start_position_y = randint(1, xLength - shipSize + 1)
+            for k in buff:
+                    buffer[k] = 0
+                            
+        elif (direction == 2 and yLength >= shipSize):  #placing ship vertical   
+            start_position_y = randint(1, yLength - shipSize + 1)
+            start_position_x = randint(1, yLength - shipSize + 1)
+            
+            while start_position_y + shipSize > yLength:
+                start_position_y = randint(1, yLength - shipSize + 1) #avoiding outside the box
+            j = 0
+            buff = {}
+            
+            while j < shipSize:
+                if not (start_position_y + j + 1, start_position_x) in buffer:
+                    buff[start_position_y + j + 1, start_position_x] = 0
+                    j += 1
+                else:
+                    buff = {}
+                    j = 0
+                    start_position_x = randint(1, yLength - shipSize + 1)
+            for k in buff:
+                    buffer[k] = 0
     
     return buffer
+
 
 def guess():
     newBoard = boardArr()
