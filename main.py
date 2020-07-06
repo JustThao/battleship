@@ -65,7 +65,12 @@ def createShips():
             #except ValueError:
              #   print("Please enter either 1 or 2")
                 
-        shipSize = 3
+        if i == 0:
+            shipSize = 3
+        elif i == 1:
+            shipSize = 2
+        elif i == 2:
+            shipSize = 1
         direction = 1
         
         if (direction == 1 and xLength >= shipSize): #placing ship horizontal
