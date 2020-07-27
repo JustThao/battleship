@@ -3,14 +3,6 @@ from random import randint
 xLength = 9
 yLength = 9
 
-# 1 == horizontal, 2 == vertical
-# if (direction == 1 and xLength >= shipSize):
-#     xPos = randint(1, xLength - shipSize + 1)
-# elif (direction == 2 and yLength >= yPos):
-#     yPos = randint(1, yLength - shipSize + 1)
-# else:
-#     print('couldnt be placed because not enough space')
-
 def printBoard(board):
     for i in range(yLength + 1):
         if i > 0:
@@ -143,4 +135,4 @@ def game():
     printBoard(boardArr())
     guess()
 
-game()
+print(createShips())
